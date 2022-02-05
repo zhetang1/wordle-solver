@@ -56,6 +56,7 @@
   width: 100px;
   height: 100px;
   background-color: silver;
+  font-size: 30px;
 }
 
 .squareNoHit {
@@ -63,6 +64,7 @@
   width: 100px;
   height: 100px;
   background-color: gray;
+  font-size: 30px;
 }
 
 .squareWrongPosition {
@@ -70,6 +72,7 @@
   width: 100px;
   height: 100px;
   background-color: goldenrod;
+  font-size: 30px;
 }
 
 .squareHit {
@@ -77,6 +80,7 @@
   width: 100px;
   height: 100px;
   background-color: forestgreen;
+  font-size: 30px;
 }
 
 .text {
