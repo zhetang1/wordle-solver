@@ -86,3 +86,7 @@
 .text {
   margin: auto;
 }
+
+.charButton {
+  width: 48px;
+}

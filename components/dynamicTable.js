@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from './square'
+import utilStyles from '../styles/utils.module.css'
 
 export default class DynamicTable extends React.Component {
   constructor(props) {
@@ -177,70 +178,70 @@ export default class DynamicTable extends React.Component {
           <tbody>
             <tr key="button row 1">
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("Q")}
                     >
                       Q
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("W")}
                     >
                       W
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("E")}
                     >
                       E
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("R")}
                     >
                       R
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("T")}
                     >
                       T
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("Y")}
                     >
                       Y
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("U")}
                     >
                       U
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("I")}
                     >
                       I
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("O")}
                     >
                       O
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("P")}
                     >
                       P
@@ -249,63 +250,63 @@ export default class DynamicTable extends React.Component {
             </tr>
             <tr key="button row 2">
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("A")}
                     >
                       A
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("S")}
                     >
                       S
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("D")}
                     >
                       D
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("F")}
                     >
                       F
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("G")}
                     >
                       G
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("H")}
                     >
                       H
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("J")}
                     >
                       J
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("K")}
                     >
                       K
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("L")}
                     >
                       L
@@ -314,70 +315,70 @@ export default class DynamicTable extends React.Component {
             </tr>
             <tr key="button row 3">
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleEnterClick()}
                     >
                       #
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("Z")}
                     >
                       Z
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("X")}
                     >
                       X
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("C")}
                     >
                       C
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("V")}
                     >
                       V
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("B")}
                     >
                       B
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("J")}
                     >
                       J
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("N")}
                     >
                       N
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleClick("M")}
                     >
                       M
                     </button>
                 </td>
                 <td>
-                    <button
+                    <button className={utilStyles.charButton}
                       onClick={() => this.handleDelClick()}
                     >
                       DEL
