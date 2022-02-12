@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <p>Click on the Square to filter. Click on # for next line <a href="https://www.linkedin.com/in/zhetang/">(contact me)</a></p>
+      <p className={utilStyles.p}>Click on the square to filter. Click on # for next line <a href="https://www.linkedin.com/in/zhetang/">(contact me)</a></p>
       <DynamicTable />
     </Layout>
   )
