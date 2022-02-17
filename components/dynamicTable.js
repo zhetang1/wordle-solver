@@ -1,6 +1,7 @@
 import React from 'react';
-import Square from './square'
-import utilStyles from '../styles/utils.module.css'
+import Square from './square';
+import utilStyles from '../styles/utils.module.css';
+import { getAllWords } from './allWords';
 
 export default class DynamicTable extends React.Component {
   constructor(props) {
@@ -8,28 +9,50 @@ export default class DynamicTable extends React.Component {
   }
 
   componentDidMount() {
-        const testWords = ["audio"];
-        import(/*webpackIgnore: true*/ 'https://assets.codepen.io/1581715/fivewords.js')
-            .then( result => {
-                     const state = {
-                       items: [
-                         ["", "", "", "", ""],
-                         ["", "", "", "", ""],
-                         ["", "", "", "", ""],
-                         ["", "", "", "", ""],
-                         ["", "", "", "", ""],
-                         ["", "", "", "", ""],
-                       ],
-                       row: 0,
-                       column: 0,
-//                       allWords: testWords, filteredWords: testWords,
-                       allWords: result.allWords, filteredWords: result.allWords,
-                       filters: []
-                     };
-                     this.setState(state);
-                  }, function(error) {
-                     console.log(error);
-                  });
+        const testWords = ["zzzzz", "audio", "aahed", ];
+        const state = {
+            items: [
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+             ["", "", "", "", ""],
+            ],
+            row: 0,
+            column: 0,
+            // allWords: testWords, filteredWords: testWords,
+            allWords: getAllWords(), filteredWords: getAllWords(),
+            filters: [],
+        };
+        this.setState(state);
+  }
+
+  sortWords(words) {
+    const filteredWordsWithPower = [];
+    words.map( word => {
+        filteredWordsWithPower.push({ word: word, power: this.calculateFilteringPower(word, words) });
+    });
+
+    filteredWordsWithPower.sort((a, b) => b.power - a.power);
+
+    return filteredWordsWithPower.map(a => a.word);
+  }
+
+  calculateFilteringPower(word, words) {
+    var filteringPower = 0;
+    const chars = new Set(word);
+
+    words.map( w => {
+        for (var i = 0; i < w.length; i++) {
+            if (chars.has(w[i])) {
+                filteringPower++;
+                break;
+            }
+        }
+    });
+
+    return filteringPower;
   }
 
   handleClick(char) {
@@ -385,5 +408,9 @@ export default class DynamicTable extends React.Component {
         {this.renderWords()}
       </div>
     );
+  }
+
+  getAllWords() {
+
   }
 }
