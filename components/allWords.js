@@ -1,8 +1,5 @@
 export function getAllWords() {
   return [
-"kioea",
-"aoife",
-"aueto",
 "aeons",
 "aotes",
 "stoae",
