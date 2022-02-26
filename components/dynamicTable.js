@@ -21,8 +21,8 @@ export default class DynamicTable extends React.Component {
             ],
             row: 0,
             column: 0,
-            allWords: testWords, filteredWords: testWords,
-    //            allWords: getAllWords(), filteredWords: getAllWords(),
+//            allWords: testWords, filteredWords: testWords,
+            allWords: getAllWords(), filteredWords: getAllWords(),
             filters: [],
         };
         this.setState(state);
