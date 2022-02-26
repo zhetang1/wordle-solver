@@ -4,12 +4,12 @@ import utilStyles from '../styles/utils.module.css';
 import { getAllWords } from './allWords';
 
 export default class DynamicTable extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  componentDidMount() {
-        const testWords = ["zzzzz", "audio", "aahed", ];
+    componentDidMount() {
+        const testWords = ["swill", "zzzzz", "audio", "aahed", ];
         const state = {
             items: [
              ["", "", "", "", ""],
@@ -21,14 +21,14 @@ export default class DynamicTable extends React.Component {
             ],
             row: 0,
             column: 0,
-            // allWords: testWords, filteredWords: testWords,
-            allWords: getAllWords(), filteredWords: getAllWords(),
+            allWords: testWords, filteredWords: testWords,
+    //            allWords: getAllWords(), filteredWords: getAllWords(),
             filters: [],
         };
         this.setState(state);
-  }
+    }
 
-  sortWords(words) {
+    sortWords(words) {
     const filteredWordsWithPower = [];
     words.map( word => {
         filteredWordsWithPower.push({ word: word, power: this.calculateFilteringPower(word, words) });
@@ -39,7 +39,7 @@ export default class DynamicTable extends React.Component {
     return filteredWordsWithPower.map(a => a.word);
   }
 
-  calculateFilteringPower(word, words) {
+    calculateFilteringPower(word, words) {
     var filteringPower = 0;
     const chars = new Set(word);
 
@@ -55,7 +55,7 @@ export default class DynamicTable extends React.Component {
     return filteringPower;
   }
 
-  handleClick(char) {
+    handleClick(char) {
     var items = this.state.items;
     var row = this.state.row
     var column = this.state.column
@@ -73,7 +73,7 @@ export default class DynamicTable extends React.Component {
     });
   }
 
-  handleEnterClick() {
+    handleEnterClick() {
     var row = this.state.row;
     var column = this.state.column;
 
@@ -124,7 +124,18 @@ export default class DynamicTable extends React.Component {
                     case "":
                         break;
                     case "no hit":
-                        if (word.includes(c)) include = false;
+                        for (var j=0; j<word.length; j++) {
+                            if (word[j] === c) {
+                                for(var k=0; k<filters.length; k+=5) {
+                                    if (filters[k+j].char.toLowerCase() === c && filters[k+j].status === "hit") {
+                                        break;
+                                    } else {
+                                        include = false;
+                                    }
+                                }
+                            }
+                        }
+
                         break;
                     case "wrong position":
                         if (!word.includes(c)) include = false;
@@ -148,7 +159,7 @@ export default class DynamicTable extends React.Component {
 
     renderRows() {
         const eventHandler = ({status, char, position}) => {
-            this.filterWords(status, char, position);
+            if(char !== '') this.filterWords(status, char, position);
         }
 
         return this.state.items.map(function(o, i) {
