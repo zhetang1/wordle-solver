@@ -135,11 +135,21 @@ export default class DynamicTable extends React.Component {
                                 }
                             }
                         }
-
                         break;
                     case "wrong position":
-                        if (!word.includes(c)) include = false;
-                        if (word[p] === c) include = false;
+                        include = false;
+                        for (var j=0; j<word.length; j++) {
+                            if (word[j] === c) {
+                                if (j !== p) {
+                                    for(var k=0; k<filters.length; k+=5) {
+                                        if (!(filters[k+j].char.toLowerCase() === c && filters[k+j].status === "hit")) {
+                                            include = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         break;
                     case "hit":
                         if (word[p] !== c) include = false;
